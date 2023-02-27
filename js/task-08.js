@@ -6,23 +6,16 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   const formEls = event.currentTarget.elements;
-
-  const mail = formEls.mail;
+  const mail = formEls.email;
   const password = formEls.password;
-
-  let hasError = false;
-
-  inputs.forEach(input => {
-    if (input.value.trim() === '') {
-      alert("Please fill in all fields.");
-      hasError = true;
+    if (mail.value === "" || password.value === "") {
+     return alert("Please fill in all fields.");
     }
-  });
-
-  if (!hasError) {
+  else {
     const formData = new FormData(event.currentTarget);
     formData.forEach((value, name) => {
-      console.log(name, value);
+    console.log(name, value);
+ 
     });
     event.currentTarget.reset();
   }

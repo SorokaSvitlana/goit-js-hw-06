@@ -13,6 +13,7 @@ function getRandomHexColor() {
 btn.addEventListener('click', handleSubmit)
 
 function handleSubmit(event) {
-  body.style.backgroundColor = getRandomHexColor();
-  colorText.textContent = getRandomHexColor();
+  const colorFn = getRandomHexColor()
+  body.style.backgroundColor = colorFn;
+  colorText.textContent = colorFn;
 }
